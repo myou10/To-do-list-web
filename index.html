@@ -8,16 +8,31 @@
 <body>
 
   <div class="app">
-    <h1>Danh sách công việc</h1>
 
-    <div class="input-row">
-      <input type="text" id="inp" placeholder="Thêm công việc mới..." />
-      <button onclick="addTask()">+ Thêm</button>
+    <div id="login-screen">
+      <h1>Danh sách công việc</h1>
+      <p>Đăng nhập để lưu todo của bạn</p>
+      <button onclick="dangNhap()">Đăng nhập bằng Google</button>
     </div>
 
-    <ul id="list"></ul>
+    <div id="todo-screen" style="display:none">
+      <div class="header-row">
+        <h1>Công việc của tôi</h1>
+        <button onclick="dangXuat()">Đăng xuất</button>
+      </div>
+      <p id="ten-nguoi-dung"></p>
+      <div class="input-row">
+        <input type="text" id="inp" placeholder="Thêm công việc mới..." />
+        <button onclick="addTask()">+ Thêm</button>
+      </div>
+      <ul id="list"></ul>
+    </div>
+
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
